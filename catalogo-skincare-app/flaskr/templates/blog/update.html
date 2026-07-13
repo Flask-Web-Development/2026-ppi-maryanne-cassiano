@@ -1,16 +1,19 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Edit "{{ post['title'] }}"{% endblock %}</h1>
+  <h1>{% block title %} Catálogo de Produtos"{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
   <form method="post">
-    <label for="title">Title</label>
-    <input name="title" id="title"
-      value="{{ request.form['title'] or post['title'] }}" required>
-    <label for="body">Body</label>
-    <textarea name="body" id="body">{{ request.form['body'] or post['body'] }}</textarea>
+    <label for="produto">Nome do produto</label>
+    <input name="produto" id="produto"
+      value="{{ request.form['produto'] or post['produto'] }}" required>
+      <label for="preco">Preço</label>
+    <input name="preco" id="preco"
+      value="{{ request.form['preco'] or post['preco'] }}" required>
+    <label for="comentario">comentario</label>
+    <textarea name="comentario" id="comentario">{{ request.form['comentario'] or post['comentario'] }}</textarea>
     <input type="submit" value="Save">
   </form>
   <hr>
